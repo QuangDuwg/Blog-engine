@@ -1,0 +1,29 @@
+<div class="author">
+    <h1 class="author__body">Trang web sáng tạo nội dung.</h1>
+  </div>
+  
+  <img src="/img/anh123.jpg" alt="Aesthetic iPad" class="hero-image" width="625" height="528">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Bài viết mới nhất</h2>
+  
+    <ul class="article-ul">
+
+     <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+        <% }) %>   
+    </ul>
+
+    <% if (nextPage !== null) { %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; Xem bài viết cũ hơn</a>
+    <% } %>
+      
+   
+  
+
+  </section>
